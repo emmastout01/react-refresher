@@ -1,41 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import panda from './panda.jpg';
-import goose from './goose.jpg';
+import Images from '../Practice/Images.js';
+import Conditionals from '../Practice/Conditionals.js';
 
 
-// This is a 'smart' component. 
+// This is a 'smart' component. That means it's part of the 'component' class and has all of the functionality associated with the component class. 
 
 const myName = 'Emma'; 
-
-// Note: Here's an example of using variables to set attributes. It cleans up the render() code below.
-const sideLength = "400px";
-
-const pandaPic = (
-  <img 
-    src= {panda}
-    alt="panda" 
-    height={sideLength} 
-    width={sideLength} />
-);
-
-const goosePic = (
-  <img 
-    src= {goose}
-    alt="goose" 
-    height={sideLength} 
-    width={sideLength} />
-);
-
-// This is called when the panda pic is clicked
-const myPandaFunc = () => {
-  console.log('hey there panda bear!')
-}
-
-// This is called when the goose pic is clicked
-const myGooseFunc = () => {
-  console.log('you silly goose!')
-}
 
 class Header extends Component {
     render() {
@@ -48,13 +19,8 @@ class Header extends Component {
             <h1 className="App-title">Welcome to React, {myName}!</h1>
           </header>
           {/* Note: Everything needs a closing tag in JSX. <br> won't fly; it needs to be <br />. */}
-          <br />
-          {/* Below: using an event listener to call a function on click of the div */}
-          <div onClick={myPandaFunc}>{pandaPic}</div>
-          <div onClick={myGooseFunc}>{goosePic}</div>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
+          <Images />
+          <Conditionals />
         </div>
       );
     }
