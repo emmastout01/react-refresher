@@ -7,13 +7,44 @@ class Conditionals extends Component {
     return (
       <div >
         <h3>Conditionals Practice</h3>
-        <p>Hello world! Test Test Test!</p>
-        {/* Below: This is a conditional format that is common in React. It's just vanilla JavaScript. What a handy way to write simple conditionals! */}
+        {/* Below: This is the ternary operator, a conditional format that is common in React. It's just vanilla JavaScript. What a handy way to write simple conditionals! */}
         {/* The format: condition ? if true do this thing : if false do this thing */}
         <h4>{isACat = true ? 'You\'re a cool cat!' : 'What\'s up dog?'}</h4>
+        {/* Below: This is the && operator. The format is condition && thing to run if condition is true. The code will only run if the condition is true. */}
+        <h4></h4>
+        <ul>
+          <li></li>
+        </ul>
       </div>
     );
   }
 }
 
 export default Conditionals;
+
+/* Note: 'if statements' do not work when they are written in JSX. 
+ Example in JSX that will not work: 
+(
+  <h1>
+    {
+      if (purchase.complete) {
+        'Thank you for placing an order!'
+      }
+    }
+  </h1>
+  There are other ways to go about writing conditionals, either by writing if statements in JS and then plugging in the altered variables into JSX, or with the ternary operator.
+)*/
+// ----------------------------------------------------
+/* Here's another nice example of the ternary operator: 
+function coinToss () {
+  // Randomly return either 'heads' or 'tails'.
+  return Math.random() < 0.5 ? 'heads' : 'tails';
+}
+
+const pics = {
+  kitty: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-kitty.jpg',
+  doggy: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-puppy.jpeg'
+};
+
+const img = <img src={pics[coinToss() === 'heads' ? 'kitty' : 'doggy']} />;
+ */
