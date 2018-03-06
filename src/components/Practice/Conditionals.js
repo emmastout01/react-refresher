@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 
 let isACat = true; 
 
+const actionLover = false;
+const romComLover = true;
+const musicalLover = true;
+const dramaLover = true;
+const horrorLover = false;
+
 class Conditionals extends Component {
   render() {
     return (
@@ -11,10 +17,15 @@ class Conditionals extends Component {
         {/* The format: condition ? if true do this thing : if false do this thing */}
         <h4>{isACat = true ? 'You\'re a cool cat!' : 'What\'s up dog?'}</h4>
         {/* Below: This is the && operator. The format is condition && thing to run if condition is true. The code will only run if the condition is true. */}
-        <h4></h4>
+        <h4>My favorite movies</h4>
         <ul>
-          <li></li>
+          {actionLover && <li>Die Hard</li>}
+          {romComLover && <li>Along Came Polly</li>}
+          {musicalLover && <li>The Sound of Music</li>}
+          {dramaLover && <li>Spotlight</li>}
+          {horrorLover && <li>Final Destination III</li>}
         </ul>
+        {/* Output: list with 'Along Came Polly', 'The Sound of Music' and 'Spotlight' */}
       </div>
     );
   }
